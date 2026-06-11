@@ -31,6 +31,7 @@ HOST_ADDRESS=$(ip -4 addr show "$INTERFACE" | grep "inet " | awk "{print \$2}" |
 
 DNS=$(grep nameserver /etc/resolv.conf | head -1 | awk "{print $2}") #Stores the first DNS server listed in the file and stores it in a variable
 
+DISK_SPACE=$(df -h --output=fstype,size) #Stores the available mounted disk into a variable
 
 PROCESS_COUNT=$(ps -e | wc -l) #Counts the current running processes in th esystem
 
@@ -64,7 +65,7 @@ DNS Server: $DNS
 System Status
 -----------------------
 Users Logged In: $USERNAME
-Disk Space:
+Disk Space: $DISK_SPACE
 Process Count: $PROCESS_COUNT
 Load Averages: $LOAD_AVERAGES
 Listening Network Ports:  $PORTS
