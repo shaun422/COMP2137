@@ -1,0 +1,4 @@
+========================================
+ 	  Configuring Server
+========================================
+Notice: Please run this script using sudo or switch to root access
